@@ -1,0 +1,33 @@
+# Node.js
+node_modules/
+dist/
+coverage/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+ocr_env/
+venv_ocr/
+
+# OS files
+.DS_Store
+
+# ML / OCR large binaries
+*.pyd
+*.dll
+*.so
+*.bin
+*.pt
+*.onnx

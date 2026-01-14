@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File - Knowledge Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: white;
+            border-radius: 10px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .navbar-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .btn-logout {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-logout:hover {
+            background: #c0392b;
+        }
+
+        .btn-delete-account {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-delete-account:hover {
+            background: #962d22;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .upload-area:hover {
+            background: #e9ecef;
+            border-color: #764ba2;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-label {
+            cursor: pointer;
+            color: #667eea;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .file-label:hover {
+            color: #764ba2;
+        }
+
+        #fileName {
+            margin-top: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            color: #e74c3c;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .modal-body {
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-body input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .modal-body input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-btn-cancel {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .modal-btn-cancel:hover {
+            background: #7f8c8d;
+        }
+
+        .modal-btn-confirm {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .modal-btn-confirm:hover {
+            background: #c0392b;
+        }
+
+        .account-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .account-section h3 {
+            color: #e74c3c;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .account-section p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            width: 100%;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-brand">📚 Knowledge Manager</div>
+        <div class="navbar-user">
+            <span class="user-info">👤 <span id="userName">Loading...</span></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>📁 Upload File</h1>
+        <p>Upload documents, PDFs, images, or videos to your knowledge manager.</p>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="upload-area">
+                <label for="fileInput" class="file-label">
+                    📤 Click to select a file
+                </label>
+                <input type="file" id="fileInput" name="file"
+                    accept=".pdf,.docx,.xlsx,.pptx,.csv,.txt,.md,.jpg,.jpeg,.png" required>
+                <div id="fileName"></div>
+            </div>
+            <button type="submit" id="uploadBtn">Upload File</button>
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <div class="links">
+            <a href="/api/files">View All Files</a>
+        </div>
+
+        <!-- Account Danger Zone -->
+        <div class="account-section">
+            <h3>⚠️ Danger Zone</h3>
+            <p>Deleting your account will permanently remove all your files, embeddings, and data. This action cannot be
+                undone.</p>
+            <button class="btn-danger" onclick="openDeleteModal()">Delete Account</button>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                ⚠️ Delete Account
+            </div>
+            <div class="modal-body">
+                <p style="color: #e74c3c; font-weight: bold; text-align: center;">
+                    This action is IRREVERSIBLE!
+                </p>
+                <p style="text-align: center; margin-top: 10px;">
+                    All your files, embeddings, and data will be permanently deleted.
+                </p>
+                <p style="text-align: center; margin-top: 15px; color: #333;">
+                    Please enter your password to confirm:
+                </p>
+                <input type="password" id="deletePassword" placeholder="Enter your password" />
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn modal-btn-cancel" onclick="closeDeleteModal()">Cancel</button>
+                <button class="modal-btn modal-btn-confirm" onclick="confirmDelete()">Delete Forever</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+        if (!token) {
+            window.location.href = '/api/auth/login-page';
+        }
+
+        // Display user name
+        if (user.name) {
+            document.getElementById('userName').textContent = user.name;
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = '/api/auth/login-page';
+            }
+        }
+
+        const fileInput = document.getElementById('fileInput');
+        const fileName = document.getElementById('fileName');
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const message = document.getElementById('message');
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files[0]) {
+                fileName.textContent = '📄 ' + e.target.files[0].name;
+            }
+        });
+
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!fileInput.files[0]) {
+                showMessage('Please select a file!', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = 'Uploading...';
+
+            try {
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + token
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('✅ File uploaded successfully!', 'success');
+                    uploadForm.reset();
+                    fileName.textContent = '';
+                    setTimeout(() => {
+                        window.location.href = '/api/files';
+                    }, 1500);
+                } else {
+                    if (response.status === 401) {
+                        showMessage('❌ Session expired. Please login again.', 'error');
+                        setTimeout(() => {
+                            logout();
+                        }, 2000);
+                    } else {
+                        showMessage('❌ Error: ' + (data.message || data.error || 'Upload failed'), 'error');
+                    }
+                }
+            } catch (error) {
+                showMessage('❌ Error: ' + error.message, 'error');
+            } finally {
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = 'Upload File';
+            }
+        });
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = 'message ' + type;
+            message.style.display = 'block';
+        }
+
+        // Delete Account Modal Functions
+        function openDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'block';
+            document.getElementById('deletePassword').value = '';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('deleteModal');
+            if (event.target === modal) {
+                closeDeleteModal();
+            }
+        }
+
+        async function confirmDelete() {
+            const password = document.getElementById('deletePassword').value;
+
+            if (!password) {
+                alert('Please enter your password to confirm deletion');
+                return;
+            }
+
+            if (!confirm('Are you ABSOLUTELY sure? This will delete ALL your data permanently!')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/auth/delete-account', {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': 'Bearer ' + token,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('✅ Account deleted successfully. Goodbye!');
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    window.location.href = '/api/auth/login-page';
+                } else {
+                    alert('❌ ' + (data.message || 'Failed to delete account'));
+                    closeDeleteModal();
+                }
+            } catch (error) {
+                alert('❌ Error: ' + error.message);
+                closeDeleteModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View File - <%= file.fileName %>
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .navbar {
+            background: white;
+            border-radius: 10px;
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 1000px;
+            margin: 0 auto 20px auto;
+        }
+
+        .navbar-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .navbar-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-info {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .btn-logout {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-logout:hover {
+            background: #c0392b;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 1.8em;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .content-area {
+            flex: 1;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            border: 1px solid #e9ecef;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            line-height: 1.6;
+            color: #333;
+            white-space: pre-wrap;
+        }
+
+        .back-btn {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            background: #5a6fd1;
+        }
+
+        .download-btn {
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .download-btn:hover {
+            background: #219150;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .no-text {
+            color: #666;
+            text-align: center;
+            padding: 40px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px dashed #ccc;
+        }
+
+        .no-text p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .no-text .reason {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .no-text ul {
+            display: inline-block;
+            text-align: left;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .no-text li {
+            margin-bottom: 5px;
+        }
+    </style>
+    <style>
+        /* Chat UI Styles */
+        .chat-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chat-messages {
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            display: none;
+            /* Hidden by default until there are messages */
+        }
+
+        .chat-messages.active {
+            display: block;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .message.user {
+            background: #e3f2fd;
+            margin-left: auto;
+            color: #0d47a1;
+        }
+
+        .message.ai {
+            background: #f1f8e9;
+            margin-right: auto;
+            color: #33691e;
+        }
+
+        .chat-input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .chat-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .chat-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .ask-ai-btn {
+            background: #8e44ad;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .ask-ai-btn:hover {
+            background: #9b59b6;
+        }
+
+        /* Source Visualization */
+        .sources-section {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid #e1e8ed;
+            font-size: 0.85rem;
+        }
+
+        .sources-title {
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .source-item {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+
+        .source-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .source-score {
+            color: #27ae60;
+            font-size: 0.8em;
+        }
+
+        .source-snippet {
+            color: #666;
+            font-style: italic;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-brand">📚 Knowledge Manager</div>
+        <div class="navbar-user">
+            <span class="user-info">👤 <span id="userName">Loading...</span></span>
+            <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>📄 <%= file.fileName %>
+                </h1>
+                <div class="meta">
+                    Type: <%= file.fileType %> | Uploaded: <%= new Date(file.createdAt).toLocaleString() %> | Extracted
+                            Size: <%= file.extractedText ? file.extractedText.length : 0 %> chars
+                </div>
+            </div>
+            <div class="actions">
+                <button onclick="openFileChat()" class="ask-ai-btn">🤖 Ask AI</button>
+                <a href="/<%= file.fileUrl %>" download="<%= file.fileName %>" class="download-btn">⬇️ Download
+                    Original</a>
+                <a href="/api/files" class="back-btn">← Back to Files</a>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <% if (extractedText && extractedText !=='No text extracted for this file.' ) { %>
+                <%= extractedText %>
+                    <% } else { %>
+                        <div class="no-text">
+                            <p>⚠️ No text could be extracted from this file.</p>
+                            <p class="reason">Possible reasons:</p>
+                            <ul>
+                                <li>The file is a scanned document or image-based PDF</li>
+                                <li>The file is encrypted or password protected</li>
+                                <li>The file contains no text content</li>
+                                <li>The file format is not fully supported</li>
+                            </ul>
+                        </div>
+                        <% } %>
+        </div>
+    </div>
+
+    <!-- File Chat Modal -->
+    <div id="fileChatModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFileChat()">&times;</span>
+            <h2 id="modalFileTitle">Chat about <%= file.fileName %>
+            </h2>
+            <div class="chat-container" style="margin-top: 15px;">
+                <div id="fileChatMessages" class="chat-messages" style="max-height: 300px;"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="fileChatInput" class="chat-input" placeholder="Ask about this file...">
+                    <button onclick="askFileAI()" id="fileChatBtn" class="chat-btn">Ask</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('token');
+        const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+        if (!token) {
+            window.location.href = '/api/auth/login-page';
+        }
+
+        // Display user name
+        if (user.name) {
+            document.getElementById('userName').textContent = user.name;
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                window.location.href = '/api/auth/login-page';
+            }
+        }
+
+
+        /* AI Chat Logic */
+        const currentFileId = '<%= file._id %>';
+
+        // File Chat Modal
+        function openFileChat() {
+            document.getElementById('fileChatMessages').innerHTML = '';
+            document.getElementById('fileChatMessages').classList.remove('active');
+            document.getElementById('fileChatModal').style.display = 'block';
+            document.getElementById('fileChatInput').focus();
+        }
+
+        function closeFileChat() {
+            document.getElementById('fileChatModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('fileChatModal');
+            if (event.target == modal) {
+                closeFileChat();
+            }
+        }
+
+        async function askFileAI() {
+            const input = document.getElementById('fileChatInput');
+            const messagesDiv = document.getElementById('fileChatMessages');
+            const btn = document.getElementById('fileChatBtn');
+            const question = input.value.trim();
+
+            if (!question) return;
+
+            // UI Updates
+            messagesDiv.classList.add('active');
+            appendMessage(messagesDiv, question, 'user');
+            input.value = '';
+            input.disabled = true;
+            btn.disabled = true;
+            btn.textContent = '...';
+
+            try {
+                const response = await fetch(`/api/rag/ask-file/${currentFileId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ question })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    appendMessage(messagesDiv, data.data.answer, 'ai', data.data.sources);
+                } else {
+                    appendMessage(messagesDiv, 'Error: ' + data.message, 'ai');
+                }
+            } catch (error) {
+                appendMessage(messagesDiv, 'Error: ' + error.message, 'ai');
+            } finally {
+                input.disabled = false;
+                btn.disabled = false;
+                btn.textContent = 'Ask';
+                input.focus();
+            }
+        }
+
+        function appendMessage(container, text, type, sources = []) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${type}`;
+
+            // Message Content
+            let contentHtml = text.replace(/\n/g, '<br>');
+
+            // Sources Section
+            if (sources && sources.length > 0) {
+                contentHtml += `
+                    <div class="sources-section">
+                        <div class="sources-title">📚 Sources Used</div>
+                        ${sources.map(s => `
+                            <div class="source-item">
+                                <div class="source-header">
+                                    <span>📄 ${s.fileName || 'Unknown File'}</span>
+                                    <span class="source-score">${Math.round(s.score * 100)}% Match</span>
+                                </div>
+                                <div class="source-snippet">"${s.text}"</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            msgDiv.innerHTML = contentHtml;
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        document.getElementById('fileChatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                askFileAI();
+            }
+        });
+    </script>
+</body>
+
+</html>
