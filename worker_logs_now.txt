@@ -1,0 +1,25 @@
+file-worker-1  | [dotenv@17.2.3] injecting env (7) from .env -- tip: 📡 add observability to secrets: https://dotenvx.com/ops
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   File Processor Worker
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   Worker ID:   file-worker-1
+file-worker-1  |   Worker Type: cpu
+file-worker-1  |   Poll Interval: 1000ms
+file-worker-1  |   Heartbeat Interval: 5000ms
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  | 
+file-worker-1  | ✓ Connected to MongoDB
+file-worker-1  | Collection knowledge_chunks already exists
+file-worker-1  | ✓ Qdrant initialized
+file-worker-1  | [DEBUG] Connecting to Redis at redis:6379
+file-worker-1  | ✓ Connected to Redis for job queue
+file-worker-1  | ✓ Connected to Redis
+file-worker-1  | 
+file-worker-1  | 🔄 file-worker-1 polling for jobs...
+file-worker-1  | ✓ Worker file-worker-1 claimed job b96822b6-15b4-4661-bf6c-7d473b9807d3
+file-worker-1  | 
+file-worker-1  | 📁 Processing file: AKASH T S M_NW_resume.pdf (ID: 6980dca4fa0ac1ca02a6a910)
+file-worker-1  |   → Extracting text...
+file-worker-1  | File validation failed: File not found: uploads\1770052772670-AKASH T S M_NW_resume.pdf
+file-worker-1  |   ✗ Processing failed: No text could be extracted from file
+file-worker-1  | ✗ Job b96822b6-15b4-4661-bf6c-7d473b9807d3 failed: No text could be extracted from file

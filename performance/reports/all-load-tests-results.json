@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-02-05T13:08:27.165Z",
+  "tests": {
+    "ragQuery": [
+      {
+        "scenario": "Light Load",
+        "connections": 5,
+        "duration": 30,
+        "requests": {
+          "total": 1100,
+          "average": 36.67,
+          "mean": 36.67,
+          "p50": 132,
+          "p99": 209,
+          "max": 247
+        },
+        "throughput": {
+          "average": 21012.67,
+          "mean": 21012.67,
+          "total": 630363
+        },
+        "errors": 0,
+        "timeouts": 0,
+        "non2xx": 0
+      },
+      {
+        "scenario": "Medium Load",
+        "connections": 15,
+        "duration": 30,
+        "requests": {
+          "total": 1590,
+          "average": 53,
+          "mean": 53,
+          "p50": 188,
+          "p99": 766,
+          "max": 1102
+        },
+        "throughput": {
+          "average": 30393.6,
+          "mean": 30393.6,
+          "total": 911780
+        },
+        "errors": 0,
+        "timeouts": 0,
+        "non2xx": 0
+      },
+      {
+        "scenario": "Heavy Load",
+        "connections": 30,
+        "duration": 30,
+        "requests": {
+          "total": 930,
+          "average": 31,
+          "mean": 31,
+          "p50": 15236,
+          "p99": 22867,
+          "max": 23069
+        },
+        "throughput": {
+          "average": 17821.34,
+          "mean": 17821.34,
+          "total": 534641
+        },
+        "errors": 10533,
+        "timeouts": 0,
+        "non2xx": 0
+      }
+    ]
+  },
+  "summary": {
+    "totalDuration": "92.66s",
+    "testsRun": 1,
+    "status": "completed",
+    "completedAt": "2026-02-05T13:09:59.822Z"
+  }
+}

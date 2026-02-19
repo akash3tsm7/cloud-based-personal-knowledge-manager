@@ -1,0 +1,279 @@
+{
+  "timestamp": "2026-02-05T13:59:43.773Z",
+  "benchmarks": {
+    "embedding": {
+      "timestamp": "2026-02-05T13:59:43.788Z",
+      "serviceAvailable": true,
+      "benchmarks": {
+        "single": [
+          {
+            "textLength": 100,
+            "avgDuration": "102.21",
+            "minDuration": "4.97",
+            "maxDuration": "487.30",
+            "iterations": 5,
+            "successfulIterations": 5
+          },
+          {
+            "textLength": 500,
+            "avgDuration": "299.70",
+            "minDuration": "3.52",
+            "maxDuration": "1482.12",
+            "iterations": 5,
+            "successfulIterations": 5
+          },
+          {
+            "textLength": 1000,
+            "avgDuration": "730.01",
+            "minDuration": "4.43",
+            "maxDuration": "3631.57",
+            "iterations": 5,
+            "successfulIterations": 5
+          },
+          {
+            "textLength": 2000,
+            "avgDuration": "2272.57",
+            "minDuration": "3.86",
+            "maxDuration": "11341.29",
+            "iterations": 5,
+            "successfulIterations": 5
+          }
+        ],
+        "batch": [
+          {
+            "batchSize": 10,
+            "duration": "19479.13",
+            "embeddingsPerSecond": "0.51",
+            "avgPerEmbedding": "1947.91"
+          },
+          {
+            "batchSize": 50,
+            "duration": "121834.42",
+            "embeddingsPerSecond": "0.41",
+            "avgPerEmbedding": "2436.69"
+          },
+          {
+            "batchSize": 100,
+            "duration": "283721.93",
+            "embeddingsPerSecond": "0.35",
+            "avgPerEmbedding": "2837.22"
+          }
+        ],
+        "concurrent": [
+          {
+            "concurrency": 1,
+            "duration": "3239.91",
+            "throughput": "0.31",
+            "avgLatency": "3239.91"
+          },
+          {
+            "concurrency": 5,
+            "duration": "32.40",
+            "throughput": "154.30",
+            "avgLatency": "6.48"
+          },
+          {
+            "concurrency": 10,
+            "duration": "83.26",
+            "throughput": "120.10",
+            "avgLatency": "8.33"
+          },
+          {
+            "concurrency": 20,
+            "duration": "153.01",
+            "throughput": "130.71",
+            "avgLatency": "7.65"
+          }
+        ]
+      }
+    },
+    "qdrant": {
+      "timestamp": "2026-02-05T14:07:09.383Z",
+      "benchmarks": {
+        "insert": [
+          {
+            "batchSize": 1,
+            "duration": "3013.75",
+            "insertsPerSecond": "0.33",
+            "avgPerInsert": "3013.75"
+          },
+          {
+            "batchSize": 10,
+            "duration": "29048.34",
+            "insertsPerSecond": "0.34",
+            "avgPerInsert": "2904.83"
+          },
+          {
+            "batchSize": 50,
+            "duration": "128858.39",
+            "insertsPerSecond": "0.39",
+            "avgPerInsert": "2577.17"
+          },
+          {
+            "batchSize": 100,
+            "duration": "284819.75",
+            "insertsPerSecond": "0.35",
+            "avgPerInsert": "2848.20"
+          }
+        ],
+        "search": [
+          {
+            "topK": 5,
+            "iterations": 10,
+            "avgDuration": "54.19",
+            "minDuration": "14.27",
+            "maxDuration": "63.64",
+            "searchesPerSecond": "18.45"
+          },
+          {
+            "topK": 10,
+            "iterations": 10,
+            "avgDuration": "59.84",
+            "minDuration": "56.51",
+            "maxDuration": "65.37",
+            "searchesPerSecond": "16.71"
+          },
+          {
+            "topK": 20,
+            "iterations": 10,
+            "avgDuration": "61.76",
+            "minDuration": "56.24",
+            "maxDuration": "90.62",
+            "searchesPerSecond": "16.19"
+          },
+          {
+            "topK": 50,
+            "iterations": 10,
+            "avgDuration": "65.10",
+            "minDuration": "59.68",
+            "maxDuration": "91.40",
+            "searchesPerSecond": "15.36"
+          }
+        ],
+        "filteredSearch": [
+          {
+            "filterType": "userId",
+            "topK": 10,
+            "iterations": 10,
+            "avgDuration": "60.19",
+            "minDuration": "54.14",
+            "maxDuration": "74.25"
+          }
+        ],
+        "delete": [
+          {
+            "pointsDeleted": 50,
+            "duration": "13.46",
+            "deletesPerSecond": "3714.90"
+          }
+        ]
+      },
+      "collectionStats": {
+        "name": "knowledge_chunks",
+        "pointsCount": 345,
+        "status": "green",
+        "config": {
+          "vectorSize": 1024,
+          "distance": "Cosine"
+        }
+      }
+    },
+    "rag": {
+      "timestamp": "2026-02-05T14:17:23.013Z",
+      "benchmarks": {
+        "standard": [
+          {
+            "topK": 5,
+            "queries": 10,
+            "avgDuration": "1081.81",
+            "minDuration": "895.94",
+            "maxDuration": "1357.12",
+            "queriesPerSecond": "0.92"
+          },
+          {
+            "topK": 10,
+            "queries": 10,
+            "avgDuration": "501.06",
+            "minDuration": "135.51",
+            "maxDuration": "1055.01",
+            "queriesPerSecond": "2.00"
+          },
+          {
+            "topK": 20,
+            "queries": 10,
+            "avgDuration": "476.20",
+            "minDuration": "161.30",
+            "maxDuration": "1084.17",
+            "queriesPerSecond": "2.10"
+          }
+        ],
+        "concurrent": [
+          {
+            "concurrency": 1,
+            "duration": "930.84",
+            "throughput": "1.07",
+            "avgLatency": "930.84"
+          },
+          {
+            "concurrency": 3,
+            "duration": "285.95",
+            "throughput": "10.49",
+            "avgLatency": "95.32"
+          },
+          {
+            "concurrency": 5,
+            "duration": "980.26",
+            "throughput": "5.10",
+            "avgLatency": "196.05"
+          },
+          {
+            "concurrency": 10,
+            "duration": "862.03",
+            "throughput": "11.60",
+            "avgLatency": "86.20"
+          }
+        ],
+        "complexity": [
+          {
+            "queryType": "short",
+            "questionLength": 11,
+            "iterations": 5,
+            "avgDuration": "261.19",
+            "minDuration": "139.47",
+            "maxDuration": "694.58"
+          },
+          {
+            "queryType": "medium",
+            "questionLength": 43,
+            "iterations": 5,
+            "avgDuration": "291.10",
+            "minDuration": "143.13",
+            "maxDuration": "800.12"
+          },
+          {
+            "queryType": "long",
+            "questionLength": 161,
+            "iterations": 5,
+            "avgDuration": "261.54",
+            "minDuration": "151.35",
+            "maxDuration": "656.46"
+          },
+          {
+            "queryType": "complex",
+            "questionLength": 192,
+            "iterations": 5,
+            "avgDuration": "270.53",
+            "minDuration": "143.82",
+            "maxDuration": "584.91"
+          }
+        ]
+      }
+    }
+  },
+  "summary": {
+    "totalDuration": "1088.95s",
+    "benchmarksRun": 3,
+    "status": "completed",
+    "completedAt": "2026-02-05T14:17:52.726Z"
+  }
+}

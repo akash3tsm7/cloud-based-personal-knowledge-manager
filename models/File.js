@@ -28,6 +28,32 @@ const FileSchema = new mongoose.Schema({
         endParagraph: Number,
     }],
     qdrantIds: [String],
+    
+    // Async processing status fields
+    status: {
+        type: String,
+        enum: ['QUEUED', 'PROCESSING', 'COMPLETED', 'FAILED'],
+        default: 'QUEUED',
+        index: true
+    },
+    jobId: {
+        type: String,
+        index: true
+    },
+    totalChunks: {
+        type: Number,
+        default: 0
+    },
+    chunksProcessed: {
+        type: Number,
+        default: 0
+    },
+    processingTime: {
+        type: Number  // milliseconds
+    },
+    startedAt: Date,
+    completedAt: Date,
+    error: String,
 }, {
     timestamps: true
 });

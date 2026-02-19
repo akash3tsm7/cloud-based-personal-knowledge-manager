@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-02-05T15:36:58.239Z",
+  "benchmarks": {
+    "standard": [
+      {
+        "topK": 5,
+        "queries": 10,
+        "avgDuration": "2366.21",
+        "minDuration": "1424.90",
+        "maxDuration": "5303.85",
+        "queriesPerSecond": "0.42"
+      },
+      {
+        "topK": 10,
+        "queries": 10,
+        "avgDuration": "1634.93",
+        "minDuration": "1177.00",
+        "maxDuration": "2150.02",
+        "queriesPerSecond": "0.61"
+      },
+      {
+        "topK": 20,
+        "queries": 10,
+        "avgDuration": "1283.48",
+        "minDuration": "814.50",
+        "maxDuration": "2866.21",
+        "queriesPerSecond": "0.78"
+      }
+    ],
+    "concurrent": [
+      {
+        "concurrency": 1,
+        "duration": "1455.25",
+        "throughput": "0.69",
+        "avgLatency": "1455.25"
+      },
+      {
+        "concurrency": 3,
+        "duration": "1615.48",
+        "throughput": "1.86",
+        "avgLatency": "538.49"
+      },
+      {
+        "concurrency": 5,
+        "duration": "838.07",
+        "throughput": "5.97",
+        "avgLatency": "167.61"
+      },
+      {
+        "concurrency": 10,
+        "duration": "1674.16",
+        "throughput": "5.97",
+        "avgLatency": "167.42"
+      }
+    ],
+    "complexity": [
+      {
+        "queryType": "short",
+        "questionLength": 11,
+        "iterations": 5,
+        "avgDuration": "1255.87",
+        "minDuration": "840.52",
+        "maxDuration": "2051.48"
+      },
+      {
+        "queryType": "medium",
+        "questionLength": 43,
+        "iterations": 5,
+        "avgDuration": "1228.99",
+        "minDuration": "404.71",
+        "maxDuration": "2115.57"
+      },
+      {
+        "queryType": "long",
+        "questionLength": 161,
+        "iterations": 5,
+        "avgDuration": "1368.57",
+        "minDuration": "304.58",
+        "maxDuration": "2348.53"
+      },
+      {
+        "queryType": "complex",
+        "questionLength": 192,
+        "iterations": 5,
+        "avgDuration": "1271.26",
+        "minDuration": "820.92",
+        "maxDuration": "2156.78"
+      }
+    ]
+  }
+}

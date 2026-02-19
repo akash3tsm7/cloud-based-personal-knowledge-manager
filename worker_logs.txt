@@ -1,0 +1,43 @@
+file-worker-1  | [dotenv@17.2.3] injecting env (7) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   File Processor Worker
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   Worker ID:   file-worker-1
+file-worker-1  |   Worker Type: cpu
+file-worker-1  |   Poll Interval: 1000ms
+file-worker-1  |   Heartbeat Interval: 5000ms
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  | 
+file-worker-1  | ✓ Connected to MongoDB
+file-worker-1  | Collection knowledge_chunks already exists
+file-worker-1  | ✓ Qdrant initialized
+file-worker-1  | [DEBUG] Connecting to Redis at redis:6379
+file-worker-1  | ✓ Connected to Redis for job queue
+file-worker-1  | ✓ Connected to Redis
+file-worker-1  | 
+file-worker-1  | 🔄 file-worker-1 polling for jobs...
+file-worker-1  | [dotenv@17.2.3] injecting env (7) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   File Processor Worker
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   Worker ID:   file-worker-1
+file-worker-1  |   Worker Type: cpu
+file-worker-1  |   Poll Interval: 1000ms
+file-worker-1  |   Heartbeat Interval: 5000ms
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  | 
+file-worker-1  | ✓ Connected to MongoDB
+file-worker-1  | Collection knowledge_chunks already exists
+file-worker-1  | ✓ Qdrant initialized
+file-worker-1  | [DEBUG] Connecting to Redis at redis:6379
+file-worker-1  | ✓ Connected to Redis for job queue
+file-worker-1  | ✓ Connected to Redis
+file-worker-1  | 
+file-worker-1  | 🔄 file-worker-1 polling for jobs...
+file-worker-1  | ✓ Worker file-worker-1 claimed job dc8efeec-abd4-46a7-8246-306d21a755c7
+file-worker-1  | 
+file-worker-1  | 📁 Processing file: 4.4 Insider Threats and Human Driven Risks.pdf (ID: 6980d8e5153b1c422b453a78)
+file-worker-1  |   → Extracting text...
+file-worker-1  | File validation failed: File not found: uploads\1770051813077-4.4 Insider Threats and Human Driven Risks.pdf
+file-worker-1  |   ✗ Processing failed: No text could be extracted from file
+file-worker-1  | ✗ Job dc8efeec-abd4-46a7-8246-306d21a755c7 failed: No text could be extracted from file

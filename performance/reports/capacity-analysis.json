@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-02-05T13:09:35.428Z",
+  "system": {
+    "platform": "win32",
+    "arch": "x64",
+    "cpus": 12,
+    "cpuModel": "13th Gen Intel(R) Core(TM) i5-1335U",
+    "totalMemory": "15.65 GB",
+    "totalMemoryBytes": 16806330368,
+    "freeMemory": "2.44 GB",
+    "freeMemoryBytes": 2616295424
+  },
+  "storage": {
+    "perUser": {
+      "files": 20,
+      "fileStorage": 24248320,
+      "fileStorageFormatted": "23.13 MB",
+      "chunks": 640,
+      "qdrantStorage": 3932160,
+      "qdrantStorageFormatted": "3.75 MB",
+      "mongoStorage": 330000,
+      "mongoStorageFormatted": "322.27 KB",
+      "total": 28510480,
+      "totalFormatted": "27.19 MB"
+    }
+  },
+  "memory": {
+    "total": 16806330368,
+    "free": 2598379520,
+    "safeMemory": 1818885734.3999999,
+    "baseMemory": 209715200,
+    "memoryPerOperation": {
+      "fileUpload": 52428800,
+      "embeddingGeneration": 10485760,
+      "ragQuery": 20971520,
+      "ocrProcessing": 104857600
+    },
+    "concurrentCapacity": {
+      "fileUpload": 30,
+      "embeddingGeneration": 153,
+      "ragQuery": 76,
+      "ocrProcessing": 15
+    }
+  },
+  "concurrency": {
+    "cpuCores": 12,
+    "avgResponseTime": 2000,
+    "requestsPerSecond": 6,
+    "maxConcurrentUsers": 72,
+    "safeConcurrentUsers": 50,
+    "requestsPerUserPerMinute": 5
+  },
+  "projections": {
+    "users": [
+      {
+        "users": 100,
+        "fileStorage": "2.26 GB",
+        "qdrantStorage": "375 MB",
+        "mongoStorage": "31.47 MB",
+        "totalStorage": "2.66 GB",
+        "totalVectors": 64000,
+        "estimatedCost": 53.465524536371234
+      },
+      {
+        "users": 1000,
+        "fileStorage": "22.58 GB",
+        "qdrantStorage": "3.66 GB",
+        "mongoStorage": "314.71 MB",
+        "totalStorage": "26.55 GB",
+        "totalVectors": 640000,
+        "estimatedCost": 84.65524536371231
+      },
+      {
+        "users": 10000,
+        "fileStorage": "225.83 GB",
+        "qdrantStorage": "36.62 GB",
+        "mongoStorage": "3.07 GB",
+        "totalStorage": "265.52 GB",
+        "totalVectors": 6400000,
+        "estimatedCost": 396.5524536371231
+      },
+      {
+        "users": 50000,
+        "fileStorage": "1.1 TB",
+        "qdrantStorage": "183.11 GB",
+        "mongoStorage": "15.37 GB",
+        "totalStorage": "1.3 TB",
+        "totalVectors": 32000000,
+        "estimatedCost": 1782.7622681856155
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "type": "scaling",
+      "severity": "info",
+      "message": "For 1000+ users, consider implementing horizontal scaling with load balancing."
+    },
+    {
+      "type": "storage",
+      "severity": "info",
+      "message": "Implement storage cleanup policies for old/unused files to manage costs."
+    },
+    {
+      "type": "caching",
+      "severity": "info",
+      "message": "Implement Redis caching for frequently accessed embeddings and RAG results."
+    }
+  ]
+}

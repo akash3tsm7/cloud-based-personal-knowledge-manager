@@ -1,0 +1,123 @@
+config:
+  target: 'http://localhost:5000'
+  phases:
+    # Warm-up phase
+    - duration: 30
+      arrivalRate: 1
+      name: "Warm-up"
+    
+    # Ramp-up phase
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 10
+      name: "Ramp-up to 10 users"
+    
+    # Sustained load
+    - duration: 120
+      arrivalRate: 10
+      name: "Sustained load - 10 users"
+    
+    # Spike test
+    - duration: 30
+      arrivalRate: 50
+      name: "Spike test - 50 users"
+    
+    # Cool down
+    - duration: 30
+      arrivalRate: 5
+      name: "Cool down"
+
+  processor: "./load-test-processor.js"
+
+scenarios:
+  - name: "RAG Query Flow"
+    weight: 40
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "{{ $randomString() }}"
+            password: "TestPassword123!"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      
+      - post:
+          url: "/api/rag/ask"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          json:
+            question: "{{ generateRandomQuestion() }}"
+            topK: 5
+            minScore: 0.3
+          capture:
+            - json: "$.success"
+              as: "querySuccess"
+
+  - name: "File Upload Flow"
+    weight: 30
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "testuser"
+            password: "TestPassword123!"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      
+      - post:
+          url: "/api/upload"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          formData:
+            file: "@./test-data/sample-document.txt"
+
+  - name: "File List and View Flow"
+    weight: 20
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "testuser"
+            password: "TestPassword123!"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      
+      - get:
+          url: "/api/files"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+          capture:
+            - json: "$[0]._id"
+              as: "fileId"
+      
+      - get:
+          url: "/api/files/{{ fileId }}"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+
+  - name: "Authentication Flow"
+    weight: 10
+    flow:
+      - post:
+          url: "/api/auth/register"
+          json:
+            username: "{{ $randomString() }}"
+            email: "{{ $randomString() }}@example.com"
+            password: "TestPassword123!"
+      
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "{{ username }}"
+            password: "TestPassword123!"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      
+      - post:
+          url: "/api/auth/logout"
+          headers:
+            Authorization: "Bearer {{ authToken }}"

@@ -18,6 +18,15 @@ async function searchBM25(query, limit = 10, userId = null) {
     try {
         console.log(`[BM25] Searching for: "${query}"`);
 
+        // Quick check: if userId provided, check if user has any files first
+        if (userId) {
+            const fileCount = await File.countDocuments({ userId });
+            if (fileCount === 0) {
+                console.log('[BM25] No files found for user, skipping search');
+                return [];
+            }
+        }
+
         // Build MongoDB text search query
         const searchQuery = {
             $text: { $search: query }

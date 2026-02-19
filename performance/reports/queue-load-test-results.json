@@ -1,0 +1,18 @@
+[
+  {
+    "scenario": "Warmup",
+    "requests": 147,
+    "rps": 14.7,
+    "latency": 278,
+    "errors": 0,
+    "non2xx": 0
+  },
+  {
+    "scenario": "Load Test",
+    "requests": 940,
+    "rps": 31.34,
+    "latency": 585,
+    "errors": 0,
+    "non2xx": 0
+  }
+]

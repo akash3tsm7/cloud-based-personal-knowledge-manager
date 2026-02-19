@@ -1,5 +1,0 @@
-This is a sample test file for the Cloud Based Personal Knowledge Manager.
-It contains some dummy text to verify text extraction and embedding generation.
-The quick brown fox jumps over the lazy dog.
-Artificial Intelligence is changing the world.
-End of test file.

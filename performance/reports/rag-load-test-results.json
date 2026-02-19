@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-02-05T14:57:38.341Z",
+  "results": [
+    {
+      "scenario": "Light Load",
+      "connections": 5,
+      "duration": 30,
+      "requests": {
+        "total": 95,
+        "completed": 95,
+        "errors": 0,
+        "avg": "1658.43",
+        "p50": 1359,
+        "p95": 4372,
+        "p99": 5741,
+        "max": 5741
+      }
+    },
+    {
+      "scenario": "Medium Load",
+      "connections": 15,
+      "duration": 30,
+      "requests": {
+        "total": 295,
+        "completed": 295,
+        "errors": 0,
+        "avg": "1549.51",
+        "p50": 755,
+        "p95": 6609,
+        "p99": 16359,
+        "max": 26866
+      }
+    },
+    {
+      "scenario": "Heavy Load",
+      "connections": 30,
+      "duration": 30,
+      "requests": {
+        "total": 357,
+        "completed": 357,
+        "errors": 0,
+        "avg": "2617.69",
+        "p50": 744,
+        "p95": 14845,
+        "p99": 26133,
+        "max": 27589
+      }
+    }
+  ]
+}

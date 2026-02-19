@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup-test-user": "node performance/load-tests/setup-test-user.js",
+    "load-test": "node performance/load-tests/run-all-tests.js",
+    "benchmark": "node performance/benchmarks/run-all-benchmarks.js",
+    "capacity-analysis": "node performance/capacity/capacity-analysis.js",
+    "performance-report": "node performance/reports/performance-report-generator.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +26,7 @@
     "ejs": "^3.1.10",
     "express": "^5.2.1",
     "form-data": "^4.0.5",
+    "ioredis": "^5.9.2",
     "jsonwebtoken": "^9.0.3",
     "mammoth": "^1.11.0",
     "mongoose": "^9.1.1",
@@ -29,6 +35,14 @@
     "openai": "^6.15.0",
     "pdf-parse": "^2.4.5",
     "pdfjs-dist": "^3.11.174",
+    "uuid": "^13.0.0",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.0",
+    "autocannon": "^7.15.0",
+    "clinic": "^13.0.0",
+    "express-status-monitor": "^1.3.4",
+    "prom-client": "^15.1.0"
   }
 }

@@ -1,0 +1,91 @@
+{
+  "timestamp": "2026-02-05T14:07:09.383Z",
+  "benchmarks": {
+    "insert": [
+      {
+        "batchSize": 1,
+        "duration": "3013.75",
+        "insertsPerSecond": "0.33",
+        "avgPerInsert": "3013.75"
+      },
+      {
+        "batchSize": 10,
+        "duration": "29048.34",
+        "insertsPerSecond": "0.34",
+        "avgPerInsert": "2904.83"
+      },
+      {
+        "batchSize": 50,
+        "duration": "128858.39",
+        "insertsPerSecond": "0.39",
+        "avgPerInsert": "2577.17"
+      },
+      {
+        "batchSize": 100,
+        "duration": "284819.75",
+        "insertsPerSecond": "0.35",
+        "avgPerInsert": "2848.20"
+      }
+    ],
+    "search": [
+      {
+        "topK": 5,
+        "iterations": 10,
+        "avgDuration": "54.19",
+        "minDuration": "14.27",
+        "maxDuration": "63.64",
+        "searchesPerSecond": "18.45"
+      },
+      {
+        "topK": 10,
+        "iterations": 10,
+        "avgDuration": "59.84",
+        "minDuration": "56.51",
+        "maxDuration": "65.37",
+        "searchesPerSecond": "16.71"
+      },
+      {
+        "topK": 20,
+        "iterations": 10,
+        "avgDuration": "61.76",
+        "minDuration": "56.24",
+        "maxDuration": "90.62",
+        "searchesPerSecond": "16.19"
+      },
+      {
+        "topK": 50,
+        "iterations": 10,
+        "avgDuration": "65.10",
+        "minDuration": "59.68",
+        "maxDuration": "91.40",
+        "searchesPerSecond": "15.36"
+      }
+    ],
+    "filteredSearch": [
+      {
+        "filterType": "userId",
+        "topK": 10,
+        "iterations": 10,
+        "avgDuration": "60.19",
+        "minDuration": "54.14",
+        "maxDuration": "74.25"
+      }
+    ],
+    "delete": [
+      {
+        "pointsDeleted": 50,
+        "duration": "13.46",
+        "deletesPerSecond": "3714.90"
+      }
+    ]
+  },
+  "collectionStats": {
+    "name": "knowledge_chunks",
+    "pointsCount": 345,
+    "status": "green",
+    "config": {
+      "vectorSize": 1024,
+      "distance": "Cosine"
+    }
+  }
+}

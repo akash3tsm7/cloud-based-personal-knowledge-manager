@@ -1,0 +1,270 @@
+[33m[nodemon] 3.1.11[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: 🔑 add access controls to secrets: https://dotenvx.com/ops
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+📤 Received file: AKASH T S M-RedHat.pdf
+[DEBUG] Connecting to Redis at 127.0.0.1:6379
+✓ Connected to Redis for job queue
+✓ File saved with ID: 6980df766232bfc977128274, status: QUEUED
+✓ Job 82e5ad0c-9c49-444d-b3e9-b4743203f8ad enqueued to queue:cpu
+✓ Job 82e5ad0c-9c49-444d-b3e9-b4743203f8ad queued for file 6980df766232bfc977128274
+📤 Received file: BCSE305L_Embedded_Systems.pdf
+✓ File saved with ID: 6980df9c6232bfc97712827f, status: QUEUED
+✓ Job 89bdb6f8-12f2-4bcf-82ae-fa875e558645 enqueued to queue:cpu
+✓ Job 89bdb6f8-12f2-4bcf-82ae-fa875e558645 queued for file 6980df9c6232bfc97712827f
+📤 Received file: AKASH T S M - PoshMark.pdf
+✓ File saved with ID: 6980e0066232bfc977128288, status: QUEUED
+✓ Job 2ba2a432-453c-48af-9fab-733c51c1061a enqueued to queue:cpu
+✓ Job 2ba2a432-453c-48af-9fab-733c51c1061a queued for file 6980e0066232bfc977128288
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+✓ MongoDB Connected
+Collection knowledge_chunks already exists
+✓ Qdrant initialized
+✓ Server running on port 5000
+✓ Login at: http://localhost:5000/api/auth/login-page
+✓ Register at: http://localhost:5000/api/auth/register-page
+📤 Received file: AKASH T S M-RedHat.pdf
+[DEBUG] Connecting to Redis at 127.0.0.1:6379
+✓ Connected to Redis for job queue
+✓ File saved with ID: 6980e111f92d93b35d554d32, status: QUEUED
+✓ Job fafcdae7-ecd0-4e26-98d0-2b25d6f5dfbd enqueued to queue:cpu
+✓ Job fafcdae7-ecd0-4e26-98d0-2b25d6f5dfbd queued for file 6980e111f92d93b35d554d32
+✓ Connected to Redis for job queue
+✓ Connected to Redis for job queue
+📤 Received file: AKASH_TSM_resume_WT.pdf
+✓ File saved with ID: 6980e183f92d93b35d554d43, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: AKASH_TSM_resume_WT.pdf
+✓ File saved with ID: 6980e18af92d93b35d554d46, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: IMG-20251217-WA0001[1].jpg
+✓ File saved with ID: 6980e209f92d93b35d554d49, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: IMG-20251217-WA0001[1].jpg
+✓ File saved with ID: 6980e20bf92d93b35d554d4c, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: IMG-20251217-WA0001[1].jpg
+✓ File saved with ID: 6980e20bf92d93b35d554d4f, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: IMG-20251217-WA0001[1].jpg
+✓ File saved with ID: 6980e20cf92d93b35d554d52, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: IMG-20251217-WA0001[1].jpg
+✓ File saved with ID: 6980e20cf92d93b35d554d55, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+📤 Received file: IMG-20251217-WA0001[1].jpg
+✓ File saved with ID: 6980e20df92d93b35d554d58, status: QUEUED
+Upload error: Error: Connection is closed.
+    at EventEmitter.sendCommand (E:\cloud based personal knowledge manager\node_modules\ioredis\built\Redis.js:333:28)
+    at EventEmitter.hset (E:\cloud based personal knowledge manager\node_modules\ioredis\built\utils\Commander.js:90:25)
+    at Object.enqueueJob (E:\cloud based personal knowledge manager\utils\queueService.js:111:18)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async E:\cloud based personal knowledge manager\routes\fileRoutes.js:81:27
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting child process[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (13) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Warning: Cannot polyfill `DOMMatrix`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".
+Warning: Cannot polyfill `Path2D`, rendering may be broken: "Error: Cannot find module 'canvas'
+Require stack:
+- E:\cloud based personal knowledge manager\node_modules\pdfjs-dist\legacy\build\pdf.js
+- E:\cloud based personal knowledge manager\utils\textExtractor.js
+- E:\cloud based personal knowledge manager\routes\fileRoutes.js
+- E:\cloud based personal knowledge manager\server.js".

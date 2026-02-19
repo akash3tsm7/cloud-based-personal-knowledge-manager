@@ -1,0 +1,18 @@
+file-worker-1  | [dotenv@17.2.3] injecting env (7) from .env -- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   File Processor Worker
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  |   Worker ID:   file-worker-1
+file-worker-1  |   Worker Type: cpu
+file-worker-1  |   Poll Interval: 1000ms
+file-worker-1  |   Heartbeat Interval: 5000ms
+file-worker-1  | ═══════════════════════════════════════════
+file-worker-1  | 
+file-worker-1  | ✓ Connected to MongoDB
+file-worker-1  | Collection knowledge_chunks already exists
+file-worker-1  | ✓ Qdrant initialized
+file-worker-1  | [DEBUG] Connecting to Redis at redis:6379
+file-worker-1  | ✓ Connected to Redis for job queue
+file-worker-1  | ✓ Connected to Redis
+file-worker-1  | 
+file-worker-1  | 🔄 file-worker-1 polling for jobs...
